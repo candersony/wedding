@@ -1,0 +1,113 @@
+@import "compass/css3",
+        "variables";
+
+@include font-face("Pinyon Script", font-files("PinyonScript.woff"));
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 16px;
+}
+
+.header-top-Button {
+  margin: 5px 5px 0 5px;
+  width: auto;
+  height: 60px;
+
+  a {
+    @include border-radius(2px);
+    @include transition(background-color 150ms ease-in-out);
+
+    width: auto;
+    padding: 14px 0;
+    display: block;
+    position: relative;
+
+    background: $colour5;
+
+    color: $colour3;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.6em;
+
+    &:hover {
+      background: $colour1;
+      border: 2px solid $colour5;
+      padding: 12px 0;
+    }
+  }
+}
+
+.header-nav-Container {
+  ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 5px 0 0 5px;
+  }
+
+  li {
+    width: 25%;
+    height: 60px;
+
+    float: left;
+    display: block;
+    position: relative;
+    text-align: center;
+
+    a {
+      @include border-radius(2px);
+      @include transition(background-color 150ms ease-in-out);
+
+      width: auto;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+      margin-right: 5px;
+      padding-top: 20px;
+      color: $colour4;
+      background: $colour2;
+
+      font-size: 1.3em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-style: normal;
+
+      &:hover {
+        background: $colour1;
+        color: $colour3;
+      }
+    }
+  }
+}
+
+.content-Container {
+  position: absolute;
+  top: 135px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}
+
+.home-View {
+  background: image-url("London_Wedding_Photography_Banner.jpg") no-repeat top center fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
