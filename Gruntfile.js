@@ -15,7 +15,9 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // Define the configuration for all the tasks
+  var userHomeDir = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE);
+
+        // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
@@ -349,7 +351,40 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
-    }
+    },
+      aws: grunt.file.readJSON(userHomeDir + '/aws.json'),
+      s3: {
+          options: {
+              key: '<%= aws.key %>',
+              secret: '<%= aws.secret %>',
+              access: 'public-read',
+              region: 'eu-west-1'
+          },
+          staging: {
+              options: {
+                  bucket: 'livestaging.melindaandcraig.com'
+              },
+              upload: [
+                  {
+                      src: 'dist/**/*.*',
+                      dest: '/',
+                      rel: 'dist'
+                  }
+              ]
+          },
+          production: {
+              options: {
+                  bucket: 'melindaandcraig.com'
+              },
+              upload: [
+                  {
+                      src: 'dist/**/*.*',
+                      dest: '/',
+                      rel: 'build'
+                  }
+              ]
+          }
+      }
   });
 
 
@@ -398,9 +433,18 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
-  ]);
+    grunt.registerTask('default', [
+        'newer:jshint',
+        'test',
+        'build'
+    ]);
+
+    grunt.registerTask('deploy', [
+      //  'build',
+        's3:staging'
+    ]);
+    grunt.registerTask('deploy:live', [
+        'build',
+        's3:production'
+    ]);
 };
