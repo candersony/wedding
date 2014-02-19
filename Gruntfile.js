@@ -14,9 +14,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-
-  var userHomeDir = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE);
-
+    
         // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -352,7 +350,7 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-      aws: grunt.file.readJSON(userHomeDir + '/aws.json'),
+      aws: grunt.file.readJSON('aws.json'),
       s3: {
           options: {
               key: '<%= aws.key %>',
