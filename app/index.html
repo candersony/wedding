@@ -24,34 +24,212 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-        <div class="header-top-Button">
-            <a href="#">
-                5th November 2014 - 330 days to go
-            </a>
-        </div>
-        <div class="header-nav-Container">
-            <ul>
-                <li class="header-nav-Button"><a ng-href="#">About Us</a></li>
-                <li class="header-nav-Button"><a ng-href="#/bigDay">Ceremony</a></li>
-                <li class="header-nav-Button"><a ng-href="#">Reception</a></li>
-                <li class="header-nav-Button"><a ng-href="#">Info</a></li>
-            </ul>
-        </div>
+    <ul id="nav">
+      <li><a href="#" id="prev"></a></li>
+      <li><a href="#" id="next"></a></li>
+    </ul>
 
-        <div class="content-Container" ng-view=""></div>
+    <div id="wrapper">
+
+    <!-- Home -->
+    <div id="home" class="section colour-section">
+      <h2 class="logo">Melinda & Craig</h2>
+      <div class="content">
+       <h1>Are Getting Married!</h1>
+        <h2>November 15, 2014 in Craig-y-nos Castle, Brecon Beacons, Wales</h2>
+      </div>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <!--script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- The Couple -->
+    <div id="the-couple" class="light-section">
+      <div class="maximum">
+        <div id="melinda">
+          <div class="content">
+            <div class="padding">
+              <h3>The Bride</h3>
+              <h4>Melinda Bramwell-King</h4>
+              <p>Melinda was born and raised in the quiet city of Perth in Western Australia. After flitting back and forth from Europe and Perth to travel and continue her studies, with 3 degrees under her belt it was time for Melinda to seek her fortune far from home.</p>
+              <p>Packing her bags she returned to England and settled in London, where she could pursue her passion for Historical Re-enacting, Karaoke, Skiing and Scuba Diving.</p>
+            </div>
+          </div>
+        </div>
+        <div id="craig">
+          <div class="content">
+            <div class="padding">
+              <h3>The Groom</h3>
+              <h4>Craig Anderson</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra dapibus magna sit amet venenatis. Duis auctor quam nec elit viverra pretium. Aliquam erat volutpat. Sed pharetra varius felis id auctor. Etiam arcu elit, aliquam eu suscipit eget, ultrices eget orci. Aliquam suscipit lacus nec velit ultricies, ac sollicitudin quam rhoncus. Nam porttitor consequat tellus et euismod. Ut condimentum lacus sit amet rutrum dignissim. Phasellus justo massa, condimentum quis auctor at, blandit vitae ante.</p>
+              <p>Mauris non lacus varius, aliquam nisl id, sodales ante. Maecenas sollicitudin a nibh dictum blandit. Donec pharetra ultricies libero, vel congue augue congue nec. Proin sed nisl mauris. Vestibulum consectetur eros eget est congue, at varius felis vulputate.</p>
+            </div>
+          </div>
+        </div>
+        <br class="clearfloat" />
+        <div id="love">
+          <h3 title="will follow you forever">Love, True Love</h3>
+          <h4>Melinda + Craig</h4>
+          <p>The couple first met at a mutual friend's party in October 2011, where Melinda willingly exchanged details with Craig, but only after discovering his current flat mate was an IT recruiter, as she was looking for a change.</p>
+          <p>Craig promptly started chatting via facebook and email with her, and a month down the line Melinda finally cottoned on that Craig liked her.</p>
+          <p>Their first date was making firework cupcakes in Melinda's kitchen for a Guy Fawkes night party. From that day onwards they were virtually inseparable.</p>
+          <p>In January 2012 they embarked on their first of many ski trips together as part of the ski group her sister organises each year. They had such a wonderful time and made it through the whole week in total serenity, which gave Melinda complete confidence that they were ready to live with each other. Just a few months later, in June 2012, they moved in together.</p>
+          <p>A year and a half later in December 2013, to Melinda's great surprise, Craig got down on one knee and proposed to his beloved Melinda. Naturally she said yes.</p>
+        </div>
+      </div>
+    </div>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script-->
+    <!-- Wedding Events -->
+    <div id="wedding-events" class="dark-section">
+      <div class="maximum">
+        <div id="ceremony">
+          <div class="content">
+            <h3>Ceremony <span>1:30pm</span></h3>
+            <h4>The Opera Theatre</h4>
+            <p>The lovely couple will be married in the opera theatre at Craig-y-nos Castle.</p>
+          </div>
+        </div>
+        <div id="cocktails">
+          <div class="content">
+            <h3>Cocktails <span>3:00pm</span></h3>
+            <h4>Bar</h4>
+            <p>This is where the real celebration begins. The ceremony will be followed by drinking! Cocktail hour will be taking place.</p>
+          </div>
+        </div>
+        <div id="reception">
+          <div class="content">
+            <h3>Dinner <span>6:00pm</span></h3>
+            <h4>Glass Room</h4>
+            <p>Dinner will be served at 6pm with intense dancing to finalize the night. You better have your dancing shoes!</p>
+          </div>
+        </div>
+        <br class="clearfloat" />
+        <div id="accommodations">
+          <h3>Accommodations</h3>
+          <p>Mauris non lacus varius, aliquam nisl id, sodales ante. Maecenas sollicitudin a nibh dictum blandit. Donec pharetra ultricies libero, vel congue augue congue nec. Proin sed nisl mauris. Vestibulum consectetur eros eget est congue, at varius felis vulputate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wedding Party -->
+    <div id="wedding-party" class="light-section">
+      <div class="maximum">
+        <h3>Bridesmaids</h3>
+        <div class="bridesmaid">
+          <div class="content">
+            <h4>Rebecca Bramwell-King</h4>
+            <p>Rebecca and Melinda are sisters.</p>
+          </div>
+        </div>
+        <br class="clearfloat" />
+        <h3>Groomsmen</h3>
+        <div class="groomsman">
+          <div class="content">
+            <h4>Lee Anderson</h4>
+            <p>Lee and Craig are brothers.</p>
+          </div>
+        </div>
+        <div class="groomsman">
+          <div class="content">
+            <h4>Mark Anderson</h4>
+            <p>Mark and Craig are brothers.</p>
+          </div>
+        </div>
+        <br class="clearfloat" />
+      </div>
+    </div>
+
+    <!-- Gift Registry -->
+    <div id="gift-registry" class="dark-section">
+      <div class="content">
+        <h3>Thanks!</h3>
+        <p>We love you all deeply, and are so blessed that you want to honor us with gifts to start our new life together. You can view our registries by clicking on each of the store logos below:</p>
+      </div>
+      <!--ul id="companies">
+        <li>
+          <a href="http://em.kohls.com/pub/cc?_ri_=X0Gzc2X%3DWQpglLjHJlTQGmGee7Syp0NtyqhzgLNYivWhzgyTFs29kzaVXtpKX%3DSBTAS&_ei_=EolaGGF4SNMvxFF7KucKuWMVBWQ1AULQykBJEVYpWJ72T83OfBA4i1hLRYWS9WuihgwEg2vbrJXY004HYEGNJkmw5QH-rCnl1WlsDjhhmoJ4PCWkrTasj8xXeOxc-1CAQXUsKgx1yswb3ee7UCnj-Vfkd8h-eYK0hjcpSa2HRFkL3RNul8XagPIgTPt5u9r5ZrrG2aribispAXdm7VlF7CXX." target="_blank">
+            <img src="img/gift-registry/kohls.png" width="218" height="95" alt="Kohl's" />
+          </a>
+        </li>
+        <li>
+          <a href="http://www.target.com/wedd/registry/C2syZxRTOTrwUYJ0qkVKFQ" target="_blank">
+            <img src="img/gift-registry/target.png" width="96" height="95" alt="Target" />
+          </a>
+        </li>
+        <li>
+          <a href="http://www1.macys.com/registry/wedding/guest/?registryId=244531" target="_blank">
+            <img src="img/gift-registry/macys.png" width="152" height="95" alt="Macy's" />
+          </a>
+        </li>
+      </ul-->
+    </div>
+
+    <!-- Did You Know -->
+    <div id="did-you-know" class="light-section">
+      <div id="slides">
+        <div class="slides_container">
+          <div>
+            <p><span>Did you know</span> that melinda has drunk over 40 gallons of coffee since she has moved to Seattle in August of 2011.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that craig has played Halo 4 for over 3 full days (3 days, 13 hours, and 45 minutes to be exact) since it's release on November 6th, 2012. Talk about nerdy...and pathetic.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda has a secret (or not-so-secret) crush on Desmond from <em>Lost</em>. Oh brotha.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that, for some reason, craig has an obsession with Brendan Fraser and Connie Chung. Yeah, we know...weird.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda's favorite food is any form of potatoes, but NOT potato salad.</p>
+          </div>
+          <div>
+            <p class="center"><span>Did you know</span> that craig's favorite band is Radiohead.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda and craig's first date was to see Michael Jackson's <em>This Is It</em>.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda and craig's first concert together was JAY-Z and Kanye West.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda and craig lived 50 feet from each other for a year...2 years before they met. They lived in the same dorm and the same section (cube) - just one floor apart.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda has a $750 stockpile of soap, paper towels, candles, toothpaste, razors, and shampoo. That is some extreme couponing.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that craig's favorite dish is the teppanyaki filet from Royal Tokyo (in Marshfield, WI).</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that melinda is a hardcore Indianapolis Colts fan. On the other hand, craig loves his Green Bay Packers! This makes for some pretty awkward Sundays.</p>
+          </div>
+          <div>
+            <p class="center"><span>Did you know</span> that melinda'   s favorite musician is Britney Spears.</p>
+          </div>
+          <div>
+            <p><span>Did you know</span> that Craig has written over 100,000 lines of code since he started working as a software engineer. Good thing he types 60 words per minute.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div id="photo-gallery" class="section colour-section">
+      <ul>
+        <li><img src="img/photo-gallery/A+C_0061.png" width="1280" height="600" alt="Melinda &amp; Craig" /></li>
+        <li><img src="img/photo-gallery/A+C_0047.png" width="1280" height="600" alt="Melinda &amp; Craig" /></li>
+        <li><img src="img/photo-gallery/A+C_0062.png" width="1280" height="600" alt="Melinda &amp; Craig" /></li>
+        <li><img src="img/photo-gallery/A+C_0067.png" width="1280" height="600" alt="Melinda &amp; Craig" /></li>
+        <li><img src="img/photo-gallery/A+C_0043.png" width="1280" height="600" alt="Melinda &amp; Craig" /></li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="light-section">
+      <div class="content">
+        <p>Copyright &copy; 2014 Melinda &amp; Craig. Made by <a href="http://www.cander.me" target="_blank">Craig Anderson</a>.</p>
+      </div>
+    </div>
+
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>

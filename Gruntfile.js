@@ -360,7 +360,7 @@ module.exports = function (grunt) {
           },
           staging: {
               options: {
-                  bucket: 'livestaging.melindaandcraig.com'
+                  bucket: 'test.melindaandcraig.com'
               },
               upload: [
                   {
@@ -372,7 +372,7 @@ module.exports = function (grunt) {
           },
           production: {
               options: {
-                  bucket: 'melindaandcraig.com'
+                  bucket: 'www.melindaandcraig.com'
               },
               upload: [
                   {
