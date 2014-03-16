@@ -1,0 +1,4 @@
+@import "compass/css3/font-face";
+
+@include font-face("Impregnable", font-files("Impregnable.eot", "Impregnable.otf", "Impregnable.svg", "Impregnable.ttf", "Impregnable.woff"));
+@include font-face("Mardian", font-files("MardianDemo.eot", "MardianDemo.otf", "MardianDemo.svg", "MardianDemo.ttf", "MardianDemo.woff"));

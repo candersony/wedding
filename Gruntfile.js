@@ -187,7 +187,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/styles/fonts/*'
+            '<%= yeoman.dist %>/styles/fonts/{,*/}*'
           ]
         }
       }
@@ -283,9 +283,8 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'styles/fonts/**/*'
           ]
         }, {
           expand: true,
@@ -438,7 +437,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
-      //  'build',
         's3:staging'
     ]);
     grunt.registerTask('deploy:live', [

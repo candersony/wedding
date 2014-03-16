@@ -23,3 +23,10 @@ $colour12: #8f8f8f;
 
 $titleFont: "Cagliostro", sans-serif;
 $bodyFont: "Gabriela", Georgia, "Times New Roman", Times, serif;
+
+@mixin title-font($size) {
+  font: 700 #{$size}/#{$size} $titleFont;
+}
+@mixin body-font($size) {
+  font: 400 #{$size}/#{$size} $titleFont;
+}
