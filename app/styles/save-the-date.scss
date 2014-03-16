@@ -14,19 +14,22 @@
 
 .save-the-date-Background {
   background: $colour1;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 100%;
+  z-index: -1;
 }
 
 .save-the-date-Content {
+  @include box-shadow(0px 0px 20px black);
+
   width: 600px;
   background: #fff;
   margin: 20px auto;
   padding: 10px 0;
   text-align: center;
-  @include box-shadow(0px 0px 20px black);
+  z-index: 1;
 
   .save-the-date-Header {
     @include save-the-date-font1(75px);
@@ -61,5 +64,17 @@
   }
   .save-the-date-text-Line7 {
     @extend .save-the-date-text-Line1;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .save-the-date-Content {
+
+    margin: 1% auto;
+    width: 97%;
+
+    img {
+      width: 50%;
+    }
   }
 }
