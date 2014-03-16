@@ -377,7 +377,7 @@ module.exports = function (grunt) {
                   {
                       src: 'dist/**/*.*',
                       dest: '/',
-                      rel: 'build'
+                      rel: 'dist'
                   }
               ]
           }
