@@ -12,7 +12,6 @@ html, body {
   width: 100%; height: 100%;
   font: 400 14px/20px $bodyFont;
   letter-spacing: 0.04em;
-//  background: url(img/noise.gif) repeat $colour7;
   -webkit-text-size-adjust: none;
 }
 
@@ -203,10 +202,10 @@ x. Home
 }
 
 #home .logo {
+  @include body-font(35px);
   margin: 0 auto;
   padding: 60px 0 0 0;
   display: block;
-  font-size: 35px;
   font-weight: bold;
   color: darken($colour1, 10%);
 }
