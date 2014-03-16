@@ -1,0 +1,81 @@
+@import "compass/css3",
+        "variables";
+
+@mixin save-the-date-font1($size) {
+  font: 700 #{$size}/#{$size} "Impregnable", Georgia, "Times New Roman", Times, serif;;
+}
+@mixin save-the-date-font2($size) {
+  $size: $size * 1.6;
+  font: 400 #{$size}/#{$size} "Mardian", Georgia, "Times New Roman", Times, serif;;
+}
+@mixin save-the-date-font3($size) {
+  $size: $size * 1.5;
+  font: 400 #{$size}/#{$size} "Impregnable", Georgia, "Times New Roman", Times, serif;;
+}
+
+.save-the-date-Background {
+  background: $colour1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.save-the-date-Content {
+  @include box-shadow(0px 0px 20px black);
+
+  width: 600px;
+  background: #fff;
+  margin: 20px auto;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1;
+
+  .save-the-date-Header {
+    @include save-the-date-font1(75px);
+    margin: 0 0 20px 0;
+    padding-top: 5px;
+    font-weight: normal;
+  }
+
+  $bigSpace: 40px;
+
+  .save-the-date-text-Line1 {
+    @include save-the-date-font3(25px);
+    margin-bottom: 5px;
+  }
+  .save-the-date-text-Line2 {
+    @include save-the-date-font2(34px);
+    color: goldenrod;
+  }
+  .save-the-date-text-Line3 {
+    @include save-the-date-font3(20px);
+  }
+  .save-the-date-text-Line4 {
+    @extend .save-the-date-text-Line2;
+    margin-bottom: $bigSpace;
+  }
+  .save-the-date-text-Line5 {
+    @include save-the-date-font3(20px);
+  }
+  .save-the-date-text-Line6 {
+    @extend .save-the-date-text-Line3;
+    margin-bottom: $bigSpace;
+  }
+  .save-the-date-text-Line7 {
+    @extend .save-the-date-text-Line1;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .save-the-date-Content {
+
+    margin: 1% auto;
+    width: 97%;
+
+    img {
+      width: 50%;
+    }
+  }
+}
