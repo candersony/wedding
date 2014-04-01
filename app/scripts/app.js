@@ -9,7 +9,7 @@ angular.module('weddingApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .when('/save-the-date', {
