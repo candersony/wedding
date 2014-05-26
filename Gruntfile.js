@@ -348,40 +348,40 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
-    },
-      aws: grunt.file.readJSON('aws.json'),
-      s3: {
-          options: {
-              key: '<%= aws.key %>',
-              secret: '<%= aws.secret %>',
-              access: 'public-read',
-              region: 'eu-west-1'
-          },
-          staging: {
-              options: {
-                  bucket: 'test.melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'dist'
-                  }
-              ]
-          },
-          production: {
-              options: {
-                  bucket: 'www.melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'dist'
-                  }
-              ]
-          }
-      }
+    }
+//      aws: grunt.file.readJSON('aws.json'),
+//      s3: {
+//          options: {
+//              key: '<%= aws.key %>',
+//              secret: '<%= aws.secret %>',
+//              access: 'public-read',
+//              region: 'eu-west-1'
+//          },
+//          staging: {
+//              options: {
+//                  bucket: 'test.melindaandcraig.com'
+//              },
+//              upload: [
+//                  {
+//                      src: 'dist/**/*.*',
+//                      dest: '/',
+//                      rel: 'dist'
+//                  }
+//              ]
+//          },
+//          production: {
+//              options: {
+//                  bucket: 'www.melindaandcraig.com'
+//              },
+//              upload: [
+//                  {
+//                      src: 'dist/**/*.*',
+//                      dest: '/',
+//                      rel: 'dist'
+//                  }
+//              ]
+//          }
+//      }
   });
 
 
@@ -435,12 +435,12 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
-
-    grunt.registerTask('deploy', [
-        's3:staging'
-    ]);
-    grunt.registerTask('deploy:live', [
-        'build',
-        's3:production'
-    ]);
+//
+//    grunt.registerTask('deploy', [
+//        's3:staging'
+//    ]);
+//    grunt.registerTask('deploy:live', [
+//        'build',
+//        's3:production'
+//    ]);
 };
