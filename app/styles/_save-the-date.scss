@@ -1,5 +1,4 @@
-@import "compass/css3",
-        "variables";
+@import "compass/css3", "_variables";
 
 @mixin save-the-date-font1($size) {
   font: 700 #{$size}/#{$size} "Impregnable", Georgia, "Times New Roman", Times, serif;;
