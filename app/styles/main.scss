@@ -1,6 +1,4 @@
-@import "compass/css3",
-"variables",
-"fonts";
+@import "compass/css3", "_variables", "_fonts";
 
 * {
   margin: 0;
@@ -117,8 +115,8 @@ x. Themes
   @extend .section;
 
   background: $colour5;
-  border-bottom: 2px solid $colour6;
-  border-top: 2px solid $colour6;
+  border-bottom: 3px solid $colour6;
+  border-top: 3px solid $colour6;
 
   h3 {
     color: $colour7;
@@ -128,7 +126,7 @@ x. Themes
     color: $colour8;
   }
 
-  p, a {
+  *, p, a {
     color: $colour9;
   }
 }
@@ -438,19 +436,4 @@ x. Footer
   text-align: center;
 }
 
-@import "save-the-date";
-
-#order-of-the-day {
-  @extend .dark-section, .maximum;
-
-  .orderOfTheDay-Table {
-
-    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;      /* TWEENER - IE 10 */
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-
-  }
-}
+@import "_save-the-date", "_order-of-the-day";
