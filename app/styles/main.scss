@@ -424,17 +424,18 @@ x. Footer
 
 *********************************************************************************************/
 #footer {
-  background: $colour7;
+  @extend .light-section;
+
   padding: 20px 0 5px 0;
-}
 
-#footer a {
-  color: $colour5;
-}
+  a {
+    color: $colour5;
+  }
 
-#footer p {
-  font: 400 12px/20px $bodyFont;
-  text-align: center;
+  p {
+    font: 400 12px/20px $bodyFont;
+    text-align: center;
+  }
 }
 
 @import "_save-the-date", "_order-of-the-day";
