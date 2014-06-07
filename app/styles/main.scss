@@ -1,6 +1,5 @@
-@import "compass/css3",
-"variables",
-"fonts";
+@import url(http://fonts.googleapis.com/css?family=Gabriela|Cagliostro);
+@import "compass/css3", "_variables", "_fonts";
 
 * {
   margin: 0;
@@ -117,8 +116,8 @@ x. Themes
   @extend .section;
 
   background: $colour5;
-  border-bottom: 2px solid $colour6;
-  border-top: 2px solid $colour6;
+  border-bottom: 1px solid $colour6;
+  border-top: 1px solid $colour6;
 
   h3 {
     color: $colour7;
@@ -128,7 +127,7 @@ x. Themes
     color: $colour8;
   }
 
-  p, a {
+  *, p, a {
     color: $colour9;
   }
 }
@@ -425,17 +424,18 @@ x. Footer
 
 *********************************************************************************************/
 #footer {
-  background: $colour7;
+  @extend .light-section;
+
   padding: 20px 0 5px 0;
+
+  a {
+    color: $colour5;
+  }
+
+  p {
+    font: 400 12px/20px $bodyFont;
+    text-align: center;
+  }
 }
 
-#footer a {
-  color: $colour5;
-}
-
-#footer p {
-  font: 400 12px/20px $bodyFont;
-  text-align: center;
-}
-
-@import "save-the-date";
+@import "_save-the-date", "_order-of-the-day";
