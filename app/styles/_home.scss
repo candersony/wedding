@@ -21,7 +21,7 @@
     color: darken($colour1, 10%);
   }
 
-  @media all and (max-width: 420px) {
+  @media all and (max-width: 720px) {
     & {
       background-image: image_url("melandcraig-small.jpg");
       background-size: 420px;

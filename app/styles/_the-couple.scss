@@ -44,19 +44,11 @@
     }
   }
 
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 720px) {
     #craig, #melinda, #love {
       width: auto;
       float: none;
       padding: 20px 5px;
-
-      &:first-of-type {
-        padding-top: 40px;
-      }
-
-      &:last-of-type {
-        padding-bottom: 40px;
-      }
 
       .content, p {
         text-align: justify;
@@ -67,6 +59,9 @@
       h3, h4 {
          text-align: center;
       }
+    }
+    #love {
+      margin: 0 auto;
     }
   }
 }
