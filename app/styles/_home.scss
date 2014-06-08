@@ -20,4 +20,29 @@
     font-weight: bold;
     color: darken($colour1, 10%);
   }
+
+  @media all and (max-width: 420px) {
+    & {
+      background-size: 420px;
+      height: 380px;
+
+      .content {
+        bottom: 5px;
+
+        h1 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+        h2 {
+          font-size: 15px;
+          line-height: 15px;
+        }
+      }
+
+      .logo {
+        @include body-font(20px);
+        padding-top: 10px;
+      }
+    }
+  }
 }

@@ -2,7 +2,8 @@
   @extend %light-section;
 
   #craig {
-    width: 50%; height: auto;
+    width: 50%;
+    height: auto;
     float: right;
 
     .content {
@@ -16,7 +17,8 @@
 
   #melinda {
     text-align: right;
-    width: 50%; height: auto;
+    width: 50%;
+    height: auto;
     float: left;
 
     .content {
@@ -29,13 +31,38 @@
   }
 
   #love {
-    width: 600px; height: auto;
+    width: 600px;
+    height: auto;
     margin: 0 auto;
     padding: 0 0 85px 0;
 
     img {
       margin: 0 auto;
       display: block;
+    }
+  }
+
+  @media all and (max-width: 750px) {
+    #craig, #melinda, #love {
+      width: auto;
+      float: none;
+      padding: 20px 5px;
+
+      &:first-of-type {
+        padding-top: 40px;
+      }
+
+      &:last-of-type {
+        padding-bottom: 40px;
+      }
+
+      .content, p {
+        text-align: justify;
+        padding: 0;
+      }
+      h3, h4 {
+         text-align: center;
+      }
     }
   }
 }
