@@ -14,9 +14,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-
-  var userHomeDir = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE);
-
+    
         // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -64,7 +62,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -100,7 +98,7 @@ module.exports = function (grunt) {
         reporter: require('jshint-stylish')
       },
       all: [
-        'Gruntfile.js',
+        //'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js'
       ],
       test: {
@@ -189,7 +187,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/styles/fonts/*'
+            '<%= yeoman.dist %>/styles/fonts/{,*/}*'
           ]
         }
       }
@@ -285,9 +283,8 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'styles/fonts/**/*'
           ]
         }, {
           expand: true,
@@ -352,39 +349,46 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-      aws: grunt.file.readJSON(userHomeDir + '/aws.json'),
-      s3: {
+    aws: grunt.file.readJSON('aws.json'),
+    s3: {
+      options: {
+          key: '<%= aws.key %>',
+          secret: '<%= aws.secret %>',
+          access: 'public-read',
+          region: 'eu-west-1',
+          gzip: true
+      },
+      staging: {
+        options: {
+          bucket: 'test.melindaandcraig.com'
+        },
+        upload: [{
+          src: 'dist/**/*.*',
+          dest: '/',
+          rel: 'dist'
+        }]
+      },
+      production: {
+        options: {
+          bucket: 'www.melindaandcraig.com'
+        },
+        upload: [{
+          src: 'dist/**/*.*',
+          dest: '/',
+          rel: 'dist',
           options: {
-              key: '<%= aws.key %>',
-              secret: '<%= aws.secret %>',
-              access: 'public-read',
-              region: 'eu-west-1'
-          },
-          staging: {
-              options: {
-                  bucket: 'livestaging.melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'dist'
-                  }
-              ]
-          },
-          production: {
-              options: {
-                  bucket: 'melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'build'
-                  }
-              ]
+            headers: {
+              "Cache-Control": "max-age=630720000, public",
+              "Expires": new Date(Date.now() + 63072000000).toUTCString()
+            }
           }
+        },{
+          src: 'dist/**/*.html',
+          dest: '/',
+          rel: 'dist'
+        }]
       }
+    }
   });
 
 
@@ -440,7 +444,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
-      //  'build',
         's3:staging'
     ]);
     grunt.registerTask('deploy:live', [

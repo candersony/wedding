@@ -1,0 +1,81 @@
+@import "compass/css3/box",
+        "variables";
+
+#order-of-the-day {
+  @extend %dark-section;
+
+  .orderOfTheDay-Table {
+
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-align(center);
+    @include box-direction(reverse);
+
+    border-bottom: 1px dashed $colour6;
+    min-height: 69px;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    .orderOfTheDay-Cell {
+      text-align: center;
+      padding: 5px 10px;
+    }
+
+    .orderOfTheDay-Cell--icon {
+      @extend .orderOfTheDay-Cell;
+      @include box-flex(1);
+
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 50px 50px;
+
+      &.rings {
+        background-image: image_url('rings.png');
+      }
+      &.couple {
+        background-image: image_url('couple.png');
+      }
+      &.drinks {
+        background-image: image_url('drinks.png');
+      }
+      &.cake {
+        background-image: image_url('cake.png');
+      }
+      &.dancing {
+        background-image: image_url('dancing.png');
+      }
+    }
+    .orderOfTheDay-Cell--event {
+      @extend .orderOfTheDay-Cell;
+      @include box-flex(2);
+    }
+    .orderOfTheDay-Cell--time {
+      @extend .orderOfTheDay-Cell;
+      @include box-flex(1);
+    }
+    .orderOfTheDay-Cell--location {
+      @extend .orderOfTheDay-Cell;
+      @include box-flex(3);
+    }
+    .orderOfTheDay-Cell--description {
+      @extend .orderOfTheDay-Cell;
+      @include box-flex(8);
+      text-align: left;
+    }
+
+    @media all and (max-width: 720px) {
+      .orderOfTheDay-Cell--description {
+        display: none;
+      }
+    }
+    @media all and (max-width: 400px) {
+      .orderOfTheDay-Cell--icon {
+        display: none;
+      }
+    }
+
+  }
+}

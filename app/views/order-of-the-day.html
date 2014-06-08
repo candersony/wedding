@@ -1,0 +1,13 @@
+<!-- Order of the day -->
+<div id="order-of-the-day">
+  <div class="maximum">
+    <h3>Order Of The Day</h3>
+    <div class="orderOfTheDay-Table" ng-repeat="event in orderOfTheDay.events">
+      <div class="orderOfTheDay-Cell--icon" ng-class="event.icon"></div>
+      <div class="orderOfTheDay-Cell--event">{{event.name}}</div>
+      <div class="orderOfTheDay-Cell--time">{{event.time | date:'shortTime'}}</div>
+      <div class="orderOfTheDay-Cell--location">{{event.location}}</div>
+      <div class="orderOfTheDay-Cell--description">{{event.description}}</div>
+    </div>
+  </div>
+</div>

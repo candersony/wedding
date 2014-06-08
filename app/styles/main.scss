@@ -1,113 +1,180 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela|Cagliostro);
 @import "compass/css3",
-        "variables";
+        "_variables",
+        "_fonts";
 
-@include font-face("Pinyon Script", font-files("PinyonScript.woff"));
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* Space out content a bit */
-body {
+* {
   margin: 0;
   padding: 0;
+  min-height: 0;
 
-  font-family: Helvetica,Arial,sans-serif;
-  font-size: 16px;
+  &::selection {
+    background: $colour1;
+    color: $colour10;
+  }
 }
 
-.header-top-Button {
-  margin: 5px 5px 0 5px;
-  width: auto;
-  height: 60px;
+html, body {
+  width: 100%; height: 100%;
+  font: 400 14px/20px $bodyFont;
+  letter-spacing: 0.04em;
+  -webkit-text-size-adjust: none;
+}
 
-  a {
-    @include border-radius(2px);
-    @include transition(background-color 150ms ease-in-out);
+a {
+  outline: none;
+}
 
-    width: auto;
-    padding: 14px 0;
-    display: block;
-    position: relative;
+a img {
+  border: none;
+}
 
-    background: $colour5;
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0;
+}
 
+h1 {
+  font: 700 55px/55px $titleFont;
+  color: $colour7;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+h2 {
+  font: 400 25px/25px $titleFont;
+  color: $colour7;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  font: 700 22px/22px $titleFont;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+
+h4 {
+  font: 400 16px/16px $titleFont;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.maximum {
+  width: auto; height: auto;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+%section {
+  position: relative;
+  padding: 35px 0;
+  border-bottom: 1px solid;
+
+  p {
+    padding: 0 0 15px 0;
+  }
+}
+
+%colour-section {
+  @extend %section;
+
+  background-color: $colour1;
+  border-bottom: 1px solid $colour2;
+  border-top: 1px solid $colour2;
+
+  h3 {
     color: $colour3;
+  }
+
+  h4 {
+    color: $colour2;
+  }
+
+  p {
+    color: $colour4;
+  }
+}
+
+%dark-section {
+  @extend %section;
+
+  background: $colour5;
+  border-color: $colour1;
+
+  h3 {
+    color: $colour7;
+  }
+
+  h4 {
+    color: $colour8;
+  }
+
+  *, p, a {
+    color: $colour9;
+  }
+}
+
+%light-section {
+  @extend %section;
+
+  background-color: $colour10;
+  border-color: $colour6;
+
+  h3 {
+    color: $colour11;
+  }
+
+  h4 {
+    color: $colour12;
+  }
+
+  *, p, a {
+    color: $colour5;
+  }
+}
+
+.icon-rose {
+  background: image_url("rose-icon2.png") no-repeat center;
+  width: image_width("rose-icon2.png");
+  height: image_height("rose-icon2.png");
+  margin: 15px  auto;
+
+  @media all and (max-width: 720px) {
+    display: none;
+  }
+}
+
+#footer {
+  @extend %dark-section;
+
+  padding: 20px 0 5px 0;
+  border: none;
+
+  p {
+    font: 400 12px/20px $bodyFont;
     text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.6em;
-
-    &:hover {
-      background: $colour1;
-      border: 2px solid $colour5;
-      padding: 12px 0;
-    }
   }
 }
 
-.header-nav-Container {
-  ul {
-    list-style: none;
-    overflow: hidden;
-    padding: 0;
-    margin: 5px 0 0 5px;
-  }
-
-  li {
-    width: 25%;
-    height: 60px;
-
-    float: left;
-    display: block;
-    position: relative;
-    text-align: center;
-
-    a {
-      @include border-radius(2px);
-      @include transition(background-color 150ms ease-in-out);
-
-      width: auto;
-      height: 100%;
-      display: block;
-      overflow: hidden;
-      margin-right: 5px;
-      padding-top: 20px;
-      color: $colour4;
-      background: $colour2;
-
-      font-size: 1.3em;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-style: normal;
-
-      &:hover {
-        background: $colour1;
-        color: $colour3;
-      }
-    }
-  }
-}
-
-.content-Container {
-  position: absolute;
-  top: 135px;
-  right: 5px;
-  bottom: 5px;
-  left: 5px;
-}
-
-.home-View {
-  background: image-url("London_Wedding_Photography_Banner.jpg") no-repeat top center fixed;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+@import "_home",
+        "_the-couple",
+        "_save-the-date",
+        "_order-of-the-day",
+        "_accommodation";

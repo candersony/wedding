@@ -1,0 +1,30 @@
+// colour section
+$colour1: rgb(190,19,12);
+$colour2: #1a1a1a;
+
+$colour3: #8a4d4e;
+$colour4: #a85e5f;
+
+// dark section
+$colour5: #1a1a1a;
+$colour6: #a98a00;
+
+$colour7: #fff;
+$colour8: #eee;
+$colour9: #ddd;
+
+// light section
+// light section
+$colour10: #f1f0ee;
+$colour11: #7a7a7a;
+$colour12: #8f8f8f;
+
+$titleFont: "Cagliostro", sans-serif;
+$bodyFont: "Gabriela", Georgia, "Times New Roman", Times, serif;
+
+@mixin title-font($size) {
+  font: 700 #{$size}/#{$size} $titleFont;
+}
+@mixin body-font($size) {
+  font: 400 #{$size}/#{$size} $titleFont;
+}
