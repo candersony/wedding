@@ -157,6 +157,12 @@ h4 {
     font: 400 12px/20px $bodyFont;
     text-align: center;
   }
+
+  @media all and (max-width: 400px) {
+    a {
+      font-size: 20px;
+    }
+  }
 }
 
 @import "_home",

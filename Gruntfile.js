@@ -355,7 +355,12 @@ module.exports = function (grunt) {
               key: '<%= aws.key %>',
               secret: '<%= aws.secret %>',
               access: 'public-read',
-              region: 'eu-west-1'
+              region: 'eu-west-1',
+              headers: {
+                "Cache-Control": "max-age=630720000, public",
+                "Expires": new Date(Date.now() + 63072000000).toUTCString()
+              },
+              gzip: true
           },
           staging: {
               options: {
