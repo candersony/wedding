@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Gabriela|Cagliostro);
-@import "compass/css3", "_variables", "_fonts";
+@import "compass/css3",
+        "_variables",
+        "_fonts";
 
 * {
   margin: 0;
@@ -68,19 +70,6 @@ h4 {
   margin: 0 auto;
 }
 
-.section {
-  position: relative;
-
-  p {
-    padding: 0 0 15px 0;
-
-  }
-}
-
-#container {
-  width: 100%; height: auto;
-}
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -88,13 +77,17 @@ h4 {
   padding: 0.2em 0;
 }
 
-/*********************************************************************************************
+%section {
+  position: relative;
 
-x. Themes
+  p {
+    padding: 0 0 15px 0;
+  }
+}
 
-*********************************************************************************************/
+%colour-section {
+  @extend %section;
 
-.colour-section {
   background-color: $colour1;
   border-bottom: 1px solid $colour2;
   border-top: 1px solid $colour2;
@@ -112,8 +105,8 @@ x. Themes
   }
 }
 
-.dark-section {
-  @extend .section;
+%dark-section {
+  @extend %section;
 
   background: $colour5;
   border-bottom: 1px solid $colour6;
@@ -132,8 +125,8 @@ x. Themes
   }
 }
 
-.light-section {
-  @extend .section;
+%light-section {
+  @extend %section;
 
   background-color: $colour10;
 
@@ -145,286 +138,13 @@ x. Themes
     color: $colour12;
   }
 
-  p {
+  *, p, a {
     color: $colour5;
   }
 }
 
-/*********************************************************************************************
-
-x. Navigation
-
-*********************************************************************************************/
-#nav {
-  margin: -49px 0 0 0;
-  position: fixed;
-  top: 50%; right: 0;
-  z-index: 999;
-  list-style: none;
-}
-
-#nav #next {
-  width: 48px; height: 48px;
-//  background: url(img/nav.png) bottom left;
-  display: block;
-}
-
-#nav #next:hover {
-//  background: url(img/nav.png) bottom right;
-}
-
-#nav #prev {
-  width: 48px; height: 48px;
-//  background: url(img/nav.png) top left;
-  margin: 0 0 2px 0;
-  display: block;
-}
-
-#nav #prev:hover {
-//  background: url(img/nav.png) top right;
-}
-/*********************************************************************************************
-
-x. Home
-
-*********************************************************************************************/
-#home {
-  width: auto; height: 600px;
-  background: image_url("melandcraig.jpg") bottom center no-repeat $colour1;
-  background-size: 590px;
-}
-
-#home .content {
-  position: absolute;
-  bottom: 50px;
-  left: 0; right: 0;
-}
-
-#home .logo {
-  @include body-font(35px);
-  margin: 0 auto;
-  padding: 60px 0 0 0;
-  display: block;
-  font-weight: bold;
-  color: darken($colour1, 10%);
-}
-
-/*********************************************************************************************
-
-x. The Couple
-
-*********************************************************************************************/
-#craig {
-  width: 50%; height: auto;
-  float: right;
-}
-
-#craig .content {
-  padding: 100px 80px 35px 20px;
-}
-
-#craig h3, #craig h4 {
-  text-align: left;
-}
-
-#melinda {
-  text-align: right;
-  width: 50%; height: auto;
-  float: left;
-}
-
-#melinda .content {
-  padding: 100px 20px 35px 80px;
-}
-
-#melinda h3, #melinda   h4 {
-  text-align: right;
-}
-
-#love {
-  width: 600px; height: auto;
-  margin: 0 auto;
-  padding: 0 0 85px 0;
-}
-
-#love img {
-  margin: 0 auto;
-  display: block;
-}
-
-/*********************************************************************************************
-
-x. Wedding Events
-
-*********************************************************************************************/
-#accommodations {
-  width: 600px; height: auto;
-  margin: 0 auto;
-  padding: 0 0 85px 0;
-}
-
-#ceremony, #cocktails, #reception {
-  width: 33.33%; height: auto;
-  float: left;
-}
-
-#ceremony .content {
-  padding: 100px 20px 35px 0;
-}
-
-#cocktails .content {
-  padding: 100px 20px 35px 20px;
-}
-
-#reception .content {
-  padding: 100px 0 35px 20px;
-}
-
-#wedding-events img {
-  margin: 0 auto;
-  padding: 0 0 20px 0;
-  display: block;
-}
-
-#wedding-events .maximum {
-  width: auto; height: auto;
-  max-width: 1206px;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-/*********************************************************************************************
-
-x. Wedding Party
-
-*********************************************************************************************/
-#wedding-party {
-  padding: 65px 60px 80px 60px;
-}
-
-#wedding-party .bridesmaid, #wedding-party .groomsman, #wedding-party .usher {
-  width: 25%; height: auto;
-  padding: 20px 0 5px 0;
-  float: left;
-}
-
-#wedding-party .content {
-  padding: 0 20px;
-}
-
-#wedding-party .content img {
-  margin: 0 auto;
-  padding: 0 0 20px 0;
-  display: block;
-}
-
-#wedding-party h3 {
-  padding: 35px 0 10px 0;
-}
-
-#wedding-party h4 {
-  padding: 0 0 10px 0;
-}
-
-/*********************************************************************************************
-
-x. Gift Registry
-
-*********************************************************************************************/
-#gift-registry {
-  padding: 100px 0;
-}
-
-#gift-registry .content {
-  width: 600px; height: auto;
-  margin: 0 auto;
-}
-
-#companies {
-  width: 750px; height: auto;
-  margin: 35px auto 0 auto;
-  list-style: none;
-  overflow: hidden;
-}
-
-#companies li {
-  width: 250px; height: auto;
-  float: left;
-}
-
-#gift-registry img {
-  margin: 0 auto;
-  display: block;
-}
-
-/*********************************************************************************************
-
-x. Did You Know?
-
-*********************************************************************************************/
-#did-you-know {
-  padding: 100px 0 85px 0;
-}
-
-#did-you-know .center {
-  text-align: center;
-}
-
-#did-you-know span {
-  font: 700 20px/20px $titleFont;
-  color: $colour11;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-#slides {
-  width: 600px; height: auto;
-  margin: 0 auto;
-}
-
-.slides_container {
-  width: 600px; height: auto;
-  display: none;
-}
-
-.slides_container div {
-  width: 600px; height: auto;
-  display: block;
-}
-
-/*********************************************************************************************
-
-x. Photo Gallery
-
-*********************************************************************************************/
-#photo-gallery {
-  width: auto; height: 600px;
-}
-
-#photo-gallery ul {
-  width: 100%; height: 600px;
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-}
-
-#photo-gallery li {
-  width: 100%; height: 600px;
-}
-
-#photo-gallery img {
-  margin: 0 0 0 -640px;
-  position: absolute;
-  top: 0; left: 50%;
-}
-
-/*********************************************************************************************
-
-x. Footer
-
-*********************************************************************************************/
 #footer {
-  @extend .light-section;
+  @extend %light-section;
 
   padding: 20px 0 5px 0;
 
@@ -438,4 +158,7 @@ x. Footer
   }
 }
 
-@import "_save-the-date", "_order-of-the-day";
+@import "_home",
+        "_the-couple",
+        "_save-the-date",
+        "_order-of-the-day";

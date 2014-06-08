@@ -1,7 +1,8 @@
-@import "compass/css3/box", "variables";
+@import "compass/css3/box",
+        "variables";
 
 #order-of-the-day {
-  @extend .dark-section;
+  @extend %dark-section;
 
   padding: 35px 0;
 
