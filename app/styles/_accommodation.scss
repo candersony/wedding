@@ -1,0 +1,12 @@
+@import "variables";
+
+#accommodation {
+  @extend %light-section;
+
+  .accommodation-content {
+    @extend .maximum;
+
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
