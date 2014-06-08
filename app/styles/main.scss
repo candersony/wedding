@@ -7,6 +7,11 @@
   margin: 0;
   padding: 0;
   min-height: 0;
+
+  &::selection {
+    background: $colour1;
+    color: $colour10;
+  }
 }
 
 html, body {
@@ -80,6 +85,7 @@ h4 {
 %section {
   position: relative;
   padding: 35px 0;
+  border-bottom: 1px solid;
 
   p {
     padding: 0 0 15px 0;
@@ -110,8 +116,7 @@ h4 {
   @extend %section;
 
   background: $colour5;
-  border-bottom: 1px solid $colour6;
-  border-top: 1px solid $colour6;
+  border-color: $colour1;
 
   h3 {
     color: $colour7;
@@ -130,6 +135,7 @@ h4 {
   @extend %section;
 
   background-color: $colour10;
+  border-color: $colour6;
 
   h3 {
     color: $colour11;
@@ -144,14 +150,18 @@ h4 {
   }
 }
 
+.icon-rose {
+  background: image_url("rose-icon2.png") no-repeat center;
+  width: image_width("rose-icon2.png");
+  height: image_height("rose-icon2.png");
+  margin: 15px  auto;
+}
+
 #footer {
-  @extend %light-section;
+  @extend %dark-section;
 
   padding: 20px 0 5px 0;
-
-  a {
-    color: $colour5;
-  }
+  border: none;
 
   p {
     font: 400 12px/20px $bodyFont;
