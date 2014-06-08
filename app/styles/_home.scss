@@ -1,0 +1,49 @@
+#home {
+  @extend %colour-section;
+
+  width: auto;
+  height: 600px;
+  background: image_url("melandcraig.jpg") bottom center no-repeat $colour1;
+  background-size: 590px;
+
+  .content {
+    position: absolute;
+    bottom: 50px;
+    left: 0; right: 0;
+  }
+
+  .logo {
+    @include body-font(35px);
+    margin: 0 auto;
+    padding: 60px 0 0 0;
+    display: block;
+    font-weight: bold;
+    color: darken($colour1, 10%);
+  }
+
+  @media all and (max-width: 720px) {
+    & {
+      background-image: image_url("melandcraig-small.jpg");
+      background-size: 420px;
+      height: 380px;
+
+      .content {
+        bottom: 5px;
+
+        h1 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+        h2 {
+          font-size: 15px;
+          line-height: 15px;
+        }
+      }
+
+      .logo {
+        @include body-font(20px);
+        padding-top: 10px;
+      }
+    }
+  }
+}

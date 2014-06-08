@@ -349,39 +349,46 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-      aws: grunt.file.readJSON('aws.json'),
-      s3: {
+    aws: grunt.file.readJSON('aws.json'),
+    s3: {
+      options: {
+          key: '<%= aws.key %>',
+          secret: '<%= aws.secret %>',
+          access: 'public-read',
+          region: 'eu-west-1',
+          gzip: true
+      },
+      staging: {
+        options: {
+          bucket: 'test.melindaandcraig.com'
+        },
+        upload: [{
+          src: 'dist/**/*.*',
+          dest: '/',
+          rel: 'dist'
+        }]
+      },
+      production: {
+        options: {
+          bucket: 'www.melindaandcraig.com'
+        },
+        upload: [{
+          src: 'dist/**/*.*',
+          dest: '/',
+          rel: 'dist',
           options: {
-              key: '<%= aws.key %>',
-              secret: '<%= aws.secret %>',
-              access: 'public-read',
-              region: 'eu-west-1'
-          },
-          staging: {
-              options: {
-                  bucket: 'test.melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'dist'
-                  }
-              ]
-          },
-          production: {
-              options: {
-                  bucket: 'www.melindaandcraig.com'
-              },
-              upload: [
-                  {
-                      src: 'dist/**/*.*',
-                      dest: '/',
-                      rel: 'dist'
-                  }
-              ]
+            headers: {
+              "Cache-Control": "max-age=630720000, public",
+              "Expires": new Date(Date.now() + 63072000000).toUTCString()
+            }
           }
+        },{
+          src: 'dist/**/*.html',
+          dest: '/',
+          rel: 'dist'
+        }]
       }
+    }
   });
 
 

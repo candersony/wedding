@@ -9,7 +9,7 @@ angular.module('weddingApp')
       name: 'Ceremony',
       time: new Date('November 15, 2014 13:00:00'),
       location: 'The Adelina Patti Opera Theatre',
-      description: 'The delightful couple will marry in the Grade 1 Listed Patti Opera Theatre at Craig-Y-Nos Castle. We hope to sing a few songs so warm up your voices to really belt them out.'
+      description: 'The delightful couple will marry in the Grade 1 Listed Patti Opera Theatre at Craig-Y-Nos Castle. We hope to sing a few songs so warm up your voices to really belt them out'
     }, {
       icon: 'couple',
       name: 'Photographs',
@@ -18,7 +18,7 @@ angular.module('weddingApp')
       description: 'The couple would like to share a few photographs with their guests so the wonderful memories live on forever'
     }, {
       icon: 'drinks',
-      name: 'Cocktails',
+      name: 'Champagne',
       time: new Date('November 15, 2014 15:00:00'),
       location: 'The Nicollini Lounge',
       description: 'After photographs with family and friends the couple would love to share a glass of champagne with you all in the lounge to celebrate their nuptials'
