@@ -1,0 +1,39 @@
+@import "variables";
+
+#giftlist {
+  @extend %dark-section;
+
+  .giftlist-content {
+    @extend .maximum;
+
+    max-width: 721px;
+    margin: 0 auto;
+    text-align: justify;
+
+    @media all and (max-width: 720px) {
+      p {
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .journey-Container {
+    margin-top: 35px;
+
+    .journey-map {
+      position: relative;
+      padding-bottom: 100%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
