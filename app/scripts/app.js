@@ -15,6 +15,9 @@ angular.module('weddingApp', [
       .when('/save-the-date', {
         templateUrl: 'views/save-the-date.html'
       })
+      .when('/invitation', {
+        templateUrl: 'views/invitation.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
