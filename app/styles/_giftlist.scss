@@ -22,9 +22,38 @@
 
     .journey-map {
       position: relative;
-      padding-bottom: 100%;
+      padding-bottom: 65.25%;
       padding-top: 30px;
       height: 0;
+      overflow: hidden;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .giftPurchase-Container {
+    margin: 35px -50px 0;
+    padding: 35px 50px 0;
+    background: #ffffff;
+
+    @media all and (max-width: 836px) {
+      & {
+        margin: 35px 0 0 0;
+        padding: 35px 0 0 0;
+      }
+    }
+
+    .giftPurchase-list {
+      position: relative;
+      padding-bottom: 100%;
+      padding-top: 30px;
+      height: 1800px;
       overflow: hidden;
 
       iframe {
