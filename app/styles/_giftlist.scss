@@ -41,6 +41,7 @@
     margin: 35px -50px 0;
     padding: 35px 50px 0;
     background: #ffffff;
+    min-width: 375px;
 
     @media all and (max-width: 836px) {
       & {
@@ -50,9 +51,33 @@
     }
 
     .giftPurchase-list {
+      $giftPurchaseListHeight: 2680px;
+
       position: relative;
-      height: 2680px;
+      height: $giftPurchaseListHeight;
       overflow: hidden;
+
+      $maxWidth: 720px;
+      @while $maxWidth > 460px {
+        $maxWidth: $maxWidth - 20;
+        $giftPurchaseListHeight: $giftPurchaseListHeight - 70px;
+
+        @media all and (max-width: $maxWidth) {
+          & {
+            height: $giftPurchaseListHeight;
+          }
+        }
+      }
+      @while $maxWidth > 400px {
+        $maxWidth: $maxWidth - 20;
+        $giftPurchaseListHeight: $giftPurchaseListHeight - 100px;
+
+        @media all and (max-width: $maxWidth) {
+          & {
+            height: $giftPurchaseListHeight;
+          }
+        }
+      }
 
       iframe {
         position: absolute;
