@@ -162,7 +162,7 @@ h4 {
 }
 
 #footer {
-  @extend %dark-section;
+  @extend %light-section;
 
   padding: 20px 0 5px 0;
   border: none;
@@ -178,4 +178,5 @@ h4 {
         "_save-the-date",
         "_order-of-the-day",
         "_accommodation",
-        "invitaion";
+        "invitaion",
+        "giftlist";
