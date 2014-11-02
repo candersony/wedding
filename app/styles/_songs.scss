@@ -1,0 +1,45 @@
+@import "variables";
+
+#songs {
+  @extend %light-section;
+
+  .songs-content {
+    @extend .maximum;
+
+    max-width: 721px;
+    margin: 0 auto;
+    text-align: justify;
+
+    @media all and (max-width: 720px) {
+      p {
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .song-Container {
+    margin-top: 15px;
+
+    .song-video {
+      position: relative;
+      padding-bottom: 4.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media all and (max-width: 720px) {
+      .song-video {
+        padding-bottom: 20.25%;
+      }
+    }
+  }
+}

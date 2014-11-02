@@ -162,7 +162,7 @@ h4 {
 }
 
 #footer {
-  @extend %light-section;
+  @extend %dark-section;
 
   padding: 20px 0 5px 0;
   border: none;
@@ -179,4 +179,5 @@ h4 {
         "_order-of-the-day",
         "_accommodation",
         "_invitaion",
-        "_giftlist";
+        "_giftlist",
+        "_songs";
