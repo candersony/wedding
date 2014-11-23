@@ -1,0 +1,48 @@
+@import "variables";
+
+#photo-upload {
+  @extend %dark-section;
+
+  .photo-upload-content {
+    @extend .maximum;
+
+    max-width: 721px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    .btn-photo-upload {
+      color: $colour2;
+      background: $colour10;
+      border-color: $colour6;
+    }
+
+    .photo-upload-or {
+      //@include body-font(30px);
+      margin: 5px auto 5px;
+    }
+
+    $dropZoneHeight: 100px;
+    $dropZoneBorderSize: 3px;
+    $dropZoneInnerHeight: ( $dropZoneHeight - ( $dropZoneBorderSize * 2 ) );
+    .photo-upload-drop-zone {
+      border: $dropZoneBorderSize dashed $colour6;
+      width: 100%;
+      padding: 30px;
+    }
+
+    .photo-upload-drop-zone--highlight {
+      border-color: $colour1;
+    }
+
+    @media all and (max-width: 720px) {
+      p {
+        padding: 0 5px;
+      }
+    }
+  }
+}

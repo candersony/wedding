@@ -180,4 +180,11 @@ h4 {
         "_accommodation",
         "_invitaion",
         "_giftlist",
-        "_songs";
+        "_songs",
+        "_photo-upload";
+
+* {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
