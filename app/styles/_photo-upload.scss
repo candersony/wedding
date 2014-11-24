@@ -22,17 +22,27 @@
     }
 
     .photo-upload-or {
-      //@include body-font(30px);
       margin: 5px auto 5px;
     }
 
-    $dropZoneHeight: 100px;
-    $dropZoneBorderSize: 3px;
-    $dropZoneInnerHeight: ( $dropZoneHeight - ( $dropZoneBorderSize * 2 ) );
     .photo-upload-drop-zone {
-      border: $dropZoneBorderSize dashed $colour6;
-      width: 100%;
+      height: 155px;
+      border: 3px dashed $colour6;
       padding: 30px;
+      overflow: hidden;
+
+      &.ng-hide-add.ng-hide-add-active,
+      &.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition: all linear 1s;
+        transition: all linear 1s;
+      }
+
+      &.ng-hide {
+        padding: 0 30px;
+        height: 0;
+        border-width: 0;
+        line-height: 0;
+      }
     }
 
     .photo-upload-drop-zone--highlight {

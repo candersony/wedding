@@ -1,7 +1,13 @@
 <div id="photo-upload" ng-controller="PhotoUpload">
     <div class="photo-upload-content">
         <h2>Melinda and Craig's<br>Wedding Photo Uploader</h2>
-        <input type="text" class="form-control" placeholder="Please enter your name (or a mysterious alias) to start uploading" ng-model="name">
+        <form class="form-horizontal" role="form">
+            <div class="form-group form-group-lg">
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" placeholder="Please enter your name (or a mysterious alias) to start uploading" ng-model="name">
+                </div>
+            </div>
+        </form>
         <div ng-file-drop="onFileSelect($files)"
              ng-file-drag-over-class="photo-upload-drop-zone--highlight"
              class="photo-upload-drop-zone"
@@ -14,5 +20,7 @@
                 Click and Select Wedding Pictures
             </div>
         </div>
+
+        <div>{{log}}</div>
     </div>
 </div>

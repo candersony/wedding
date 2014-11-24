@@ -5,16 +5,22 @@ angular.module('weddingApp')
 
     $scope.uploaderName = null;
 
+    $scope.log = '';
+
     function fileUploadProgress(evt) {
-      console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+      var message = 'percent: ' + parseInt(100.0 * evt.loaded / evt.total);
+      console.log(message);
+      $scope.log += '\n' + message;
     }
-    function fileUploadSuccess (data) {
+    function fileUploadSuccess (data, status, headers, config) {
       // file is uploaded successfully
-      console.log(data);
+      console.log(data, status, headers, config);
+      $scope.log += 'success::' + JSON.stringify(data) + JSON.stringify(status) + JSON.stringify(headers) + JSON.stringify(config);
     }
 
-    function errorHandler(err){
-      console.log(err);
+    function errorHandler(data, status, headers, config){
+      console.log(data, status, headers, config);
+      $scope.log += 'error::' + JSON.stringify(data, null, 2) + ' ## ' + JSON.stringify(status, null, 2) + ' ## ' + JSON.stringify(headers, null, 2) + ' ## ' + JSON.stringify(config, null, 2);
     }
 
     $scope.$watch('name', function(name){
@@ -27,7 +33,7 @@ angular.module('weddingApp')
       //$files: an array of files selected, each file has name, size, and type.
       for (var i = 0; i < $files.length; i++) {
         var file = $files[i],
-          fileName = $scope.name + '--' + file.name;
+          fileName = $scope.name.replace(/[\s#']/, '-') + '--' + file.name;
 
         $scope.upload = $upload.upload({
           url: 'http://photo-upload.melindaandcraig.com.s3-eu-west-1.amazonaws.com',
