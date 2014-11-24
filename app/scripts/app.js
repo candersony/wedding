@@ -5,8 +5,7 @@ angular.module('weddingApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'angularFileUpload',
-  'ngS3upload'
+  'angularFileUpload'
 ])
   .config(function ($routeProvider) {
     $routeProvider
