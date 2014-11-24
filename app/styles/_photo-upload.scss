@@ -6,6 +6,7 @@
   .photo-upload-content {
     @extend .maximum;
 
+    overflow: hidden;
     max-width: 721px;
     margin: 0 auto;
     text-align: center;
