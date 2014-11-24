@@ -2,6 +2,20 @@
 
 #photo-upload {
   @extend %dark-section;
+}
+
+#photo-upload-file-list {
+  @extend %light-section;
+}
+
+.photo-upload-progress {
+  width: 0%;
+  background: red;
+  height: 10px;
+}
+
+#photo-upload,
+#photo-upload-file-list {
 
   .photo-upload-content {
     @extend .maximum;

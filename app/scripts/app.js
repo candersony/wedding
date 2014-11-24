@@ -21,7 +21,8 @@ angular.module('weddingApp', [
         templateUrl: 'views/invitation.html'
       })
       .when('/photo-upload', {
-        templateUrl: 'views/photo-upload.html'
+        templateUrl: 'views/photo-upload.html',
+        controller: 'PhotoUpload'
       })
       .otherwise({
         redirectTo: '/'
