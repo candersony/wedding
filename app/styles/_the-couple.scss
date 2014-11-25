@@ -1,6 +1,10 @@
 #the-couple{
   @extend %light-section;
 
+  * {
+    @include box-sizing(content-box);
+  }
+
   #craig {
     width: 50%;
     height: auto;
