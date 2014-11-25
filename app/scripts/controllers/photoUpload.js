@@ -14,15 +14,30 @@ angular.module('weddingApp')
 
     $scope.files = [];
 
+    $scope.uploadAll = function(){
+      angular.forEach($scope.files, function(file){
+        file.startUpload();
+      });
+    };
+
     function FileView(file, uploaderName){
       this.file = file;
       this.uploaderName = uploaderName;
+      this.uploadComplete = false;
+      this.errorOccured = false;
+      this.uploadTask = null;
+      this.progress = 0;
     }
 
     FileView.prototype.startUpload = function(){
-      var fileName = this.uploaderName.replace(/[\s#']/, '-') + '--' + this.file.name;
+      var fileName = this.uploaderName.replace(/[\s#']/, '-') + '--' + this.file.name,
+        handlers = {
+          progress: this.updateProgress(),
+          success: this.uploadSuccess(),
+          error: this.uploadFailed()
+        };
 
-      $upload.upload({
+      this.uploadTask = $upload.upload({
         url: 'http://photo-upload.melindaandcraig.com.s3-eu-west-1.amazonaws.com',
         method: 'POST',
         data : {
@@ -36,22 +51,30 @@ angular.module('weddingApp')
         },
         file: this.file
       })
-      .progress(this.updateProgress())
-      .success(this.uploadSuccess())
-      .error(this.uploadFailed());
+      .progress(handlers.progress)
+      .success(handlers.success)
+      .error(handlers.error);
+    };
+
+    FileView.prototype.cancelUpload = function() {
+      if(this.uploadTask !== null) {
+        this.uploadTask.cancel();
+        this.uploadTask = null;
+      }
     };
 
     FileView.prototype.updateProgress = function() {
       var self = this;
-      return function(event) {
-        self.progress = parseInt(100.0 * event.loaded / event.total) + '%';
+      return function(evt) {
+        self.progress = parseInt(100.0 * evt.loaded / evt.total);
       };
     };
 
     FileView.prototype.uploadSuccess = function() {
       var self = this;
       return function() {
-        self.uploadCompelte = true;
+        self.uploadComplete = true;
+        self.progress = 100;
       };
     };
 
@@ -65,7 +88,7 @@ angular.module('weddingApp')
           status: status,
           headers: headers,
           config: config
-        }
+        };
       };
     };
 

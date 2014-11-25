@@ -23,14 +23,18 @@
     </div>
 </div>
 <div id="photo-upload-file-list">
+    <div class="btn btn-success photo-upload-all-button ng-click="uploadAll()" ng-show="files.length > 0">Upload All</div>
     <div class="photo-upload-content">
         <div ng-repeat="file in files">
             <div class="row">
-                <div class="col-md-4">{{file.file.name}}</div>
-                <div class="btn btn-success col-md-4" ng-click="file.startUpload()">Start Upload</div>
-                <div class="btn btn-danger col-md-4">Cancel Upload</div>
+                <div class="col-md-9">{{file.file.name}}</div>
+                <div class="photo-upload-buttons col-md-3">
+                    <div class="btn btn-success" ng-click="file.startUpload()" ng-hide="file.uploadTask">Start Upload</div>
+                    <div class="btn btn-danger" ng-click="file.cancelUpload()" ng-show="file.uploadTask && !file.uploadComplete">Cancel Upload</div>
+                    <div class="photo-upload-progress" ng-show="file.uploadTask">{{file.progress}}%</div>
+                    <div ng-show="file.uploadComplete">Upload Complete</div>
+                </div>
             </div>
-            <div class="row photo-upload-progress" ng-style="{ width: file.progress }"></div>
         </div>
     </div>
 </div>
